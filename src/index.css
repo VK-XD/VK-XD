@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+  background-color: #fafafa;
+  color: #0c0c0e;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom fine-grid line styles inspired by Indicium.ai */
+.grid-bg-overlay {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+.glow-blue {
+  background: radial-gradient(circle, rgba(0, 82, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.glow-red {
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.fine-border {
+  border: 1px solid rgba(9, 9, 11, 0.08);
+}
+
+.fine-border-r {
+  border-right: 1px solid rgba(9, 9, 11, 0.08);
+}
+
+.fine-border-b {
+  border-bottom: 1px solid rgba(9, 9, 11, 0.08);
+}
+
+.fine-border-l {
+  border-left: 1px solid rgba(9, 9, 11, 0.08);
+}
+
+.fine-border-t {
+  border-top: 1px solid rgba(9, 9, 11, 0.08);
+}
+
+/* Smooth custom styles */
+::selection {
+  background-color: rgba(0, 82, 255, 0.15);
+  color: #0052ff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fafafa;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* Apple iOS Liquid Glass Style */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 82, 255, 0.03),
+    0 1px 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 -1px 2px 0 rgba(9, 9, 11, 0.03) inset;
+}
+
+.liquid-glass-dark {
+  background: rgba(12, 12, 14, 0.75);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.5),
+    0 1px 1px 0 rgba(255, 255, 255, 0.15) inset;
+}
+
+/* Decorative glass reflections */
+.glass-reflection {
+  position: relative;
+}
+.glass-reflection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.15) 55%,
+    transparent 65%
+  );
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+/* Keyframe Animations */
+@keyframes laser-scan {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes slow-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes reverse-rotate {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(0.95); opacity: 0.5; }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-scan {
+  animation: laser-scan 4s linear infinite;
+}
+
+.animate-slow-spin {
+  animation: slow-rotate 25s linear infinite;
+}
+
+.animate-reverse-spin {
+  animation: reverse-rotate 35s linear infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+

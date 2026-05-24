@@ -1,0 +1,6 @@
+{
+  "name": "Emazyn",
+  "description": "AI-Powered Career Growth Ecosystem. Replicating the Indicium AI grid layout, visual language, and content.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
